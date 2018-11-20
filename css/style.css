@@ -102,6 +102,11 @@ img[id*="sq"]{
     animation-duration: 2s;
     animation-play-state: paused;
 }
+#time-bar{
+    width:0%;
+    background-color:rgb(247, 100, 0);
+    height: 10px;
+}
 #completed-stats,#remaining-stats{
     color: #00DDC0;
     margin-top: 10px;
@@ -116,7 +121,7 @@ img[id*="sq"]{
     font-weight: bolder;
     border-radius: 30px;
 }
-#btn-finish:hover,#btn-next-level:hover{
+#btn-finish:hover,#btn-next-level:hover,#time-bar-frame{
     border: solid 2px #00DDC0;
    
 }

@@ -5,7 +5,8 @@ var completed = [];
 var numOfOpenedImages = 0;
 var lastOpenedImg;
 var timeDecreasingInterval;
-
+var startingTime;
+var greenColorSaturation;
 
 
 
@@ -55,6 +56,7 @@ function startTime() {
 
         }
         setTime(time);
+        updateTimeBar();
     }, 1000)
 }
 function finishGame() {
@@ -70,6 +72,10 @@ function newGame() {
     location.reload();
 }
 function nextLevel() {
+    if(level===4){
+        newGame();
+        return;
+    }
     clearGame();
     setTime(level * 7 + Math.pow(2, level));
     level++;
@@ -79,6 +85,9 @@ function nextLevel() {
     refreshBtnGameStart();
     updateInGameStats();
     refreshGameStatsAnimation();
+    refreshTimeBar();
+    startingTime=getTime();
+    greenColorSaturation=200;
 }
 
 
@@ -117,6 +126,20 @@ function refreshVariables() {
 function refreshGameStatsAnimation() {
     let element = document.getElementsByClassName("game-stats")[0];
     addElementClass(element,"running");
+}
+function refreshTimeBar(){
+    let timeBar=document.getElementById("time-bar");
+    timeBar.style.paddingLeft="0px";
+    timeBar.style.width=0+"px";
+}
+function updateTimeBar(){
+    let percentage=1/startingTime;
+    let timeBar=document.getElementById("time-bar");
+
+    
+    timeBar.style.width=String(timeBar.offsetWidth+(percentage*timeBar.parentElement.offsetWidth)-0.5)+"px";
+    greenColorSaturation-=(percentage*200);
+    timeBar.style.backgroundColor=`rgb(247,${greenColorSaturation},0)`;
 }
 
 
@@ -183,11 +206,13 @@ function checkImages(img1, img2) {
 function setImagesCompleted(img1, img2) {
 
 
+    addElementClass(img1,"unclickable");
     addElementClass(img1.parentElement,"unclickable");
     addElementClass(img1.parentElement,"completed");
 
 
 
+    addElementClass(img2,"unclickable");
     addElementClass(img2.parentElement,"unclickable");
     addElementClass(img2.parentElement,"completed");
 
