@@ -1,0 +1,209 @@
+@keyframes statsSlideIn {
+    from{
+        top:0;
+    }
+    to{
+        top:25%;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+body,html{
+    width: 100%;
+}
+#welcome-title{
+    margin-top: 5%;
+    font-weight: 500;
+    font-size: 2rem;
+}
+#btn-game-started{
+    margin-top: 1%;
+    margin-bottom: 4%;
+    padding: 10px;
+    background-color: #353535;
+    border: none;
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+#time,#level{
+    margin-top:2%;
+    font-size: 1.7rem;
+    font-weight: 400;
+    
+}
+#game{
+    margin: 2% 0;
+}
+#last-top-center-div{
+    border-bottom: solid 2px #353535;
+    padding: 1px;
+}
+#first-bottom-center-div{
+    border-top: solid 2px #353535;
+    padding: 1px;
+}
+
+#remaining-number,#completed-number,#remaining,#completed{
+    display: inline;
+}
+
+#remaining-number,#completed-number{
+    vertical-align: top;
+    font-size: 1.5rem;
+}
+
+
+.square{
+    float: left;
+    border:solid 5px white ;
+    background-color: rgb(243, 243, 3);
+    width: 33.33%;
+
+}
+img[id*="sq"]{
+    height: 100%;
+    width: 100%;
+    
+}
+
+.game-images{
+    visibility: hidden;
+}
+.completed{
+    background-color: rgba(27, 189, 167, 0.76);
+    border-radius: 25px;
+}
+#final-stats-img{
+    margin-top: 20px;
+    width: 45%;
+    height: auto;
+}
+.game-stats{
+    position: fixed;
+    top:25vh;
+    left: 50%;
+    width:80vw;  
+    margin-left: -40vw;
+
+    visibility: hidden;
+
+    background-color: #353535;
+    text-align: center;
+    color: whitesmoke;
+    padding: 20px;
+    border-radius: 30px;
+
+    animation-name: statsSlideIn;
+    animation-duration: 2s;
+    animation-play-state: paused;
+}
+#completed-stats,#remaining-stats{
+    color: #00DDC0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#btn-finish,#btn-next-level{
+    width:30%;
+    padding: 15px;
+    background-color:rgb(243, 243, 3);
+    border: solid 3px #FF3C63;
+    color: #FF3C63;
+    font-weight: bolder;
+    border-radius: 30px;
+}
+#btn-finish:hover,#btn-next-level:hover{
+    border: solid 2px #00DDC0;
+   
+}
+#btn-next-level{
+    display: inline;
+}
+
+
+.running{
+    animation-play-state: running;
+}
+.visible{
+    visibility: visible;
+}
+.unclickable{
+    pointer-events: none;
+}
+
+/*Responsive design*/
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 1px;
+    width: 100%;
+    text-align: center;
+    
+}
+@media screen and (min-width:768px){
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    [class*="col-"]{
+        text-align: left;
+    }
+    .square{
+        width: 25%;
+        padding-bottom: auto;
+    }
+    .completed{
+        background-color: #00DDC0;
+    }
+    #remaining,#remaining-number,#completed,#completed-number{
+        font-size: 1rem;
+    }
+    #completed-ingame-info{
+        text-align: right;
+    }
+    
+}
+@media screen and (min-width:980px){
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    [class*="col-"]{
+        text-align: left;
+    }
+    #remaining,#remaining-number,#completed,#completed-number{
+        font-size: 1.5rem;
+    }
+
+    .game-stats{
+        width:30vw;
+        height: auto;
+        margin-left: -15vw;
+        
+    }
+
+}

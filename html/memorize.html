@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+
+</head>
+
+<body>
+    <div class="game-stats">
+        <h1 id="final-stats-title"></h1>
+        <img id="final-stats-img" src="../img/brainstorm.png" alt="brain">
+        <h2>Completed:</h2>
+        <h2 id="completed-stats"></h2>
+        <h2>Remaining:</h2>
+        <h2 id="remaining-stats"></h2>
+        <input id="btn-finish" type="button" value="FINISH" onclick="newGame()">
+        <input id="btn-next-level" type="button" value="NEXT LEVEL" onclick="nextLevel()">
+    </div>
+    <header class="row">
+        <div class="col-2 col-s-2">
+
+        </div>
+        <div class="col-8 col-s-8">
+            <h1 id="welcome-title">Welcome to MemorizeIT</h1>
+        </div>
+        <div class="col-2 col-s-2"></div>
+    </header>
+    <section>
+
+        <div class="row">
+            <div class="col-2 col-s-2"></div>
+            <div class="col-8 col-s-8">
+                <h2 id="level"></h2>
+                <h2 id="time"></h2>
+            </div>
+            <div class="col-2 col-s-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2 col-s-2"></div>
+            <div class="col-8 col-s-8" id="last-top-center-div">
+                <input id="btn-game-started" type="button" value="START GAME" onclick="startGame()">
+            </div>
+            <div class="col-2 col-s-2"></div>
+        </div>
+
+    </section>
+    <div class="row">
+        <div class="col-2 col-s-2"></div>
+        <div class="col-8 col-s-8" id="game">
+            <div class="row" id="game-row">
+                <!-- Square divs with images...-->
+            </div>
+        </div>
+        <div class="col-2 col-s-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-2 col-s-2"></div>
+        <div class="col-8 col-s-8" id="first-bottom-center-div">
+            <div class="row" id="bottom-info">
+                <div class="col-2 col-s-2">
+                    <h2 id="remaining">Remaining:</h2>
+                    <p id="remaining-number">0</p>
+                </div>
+                <div class="col-8 col-s-8">
+                </div>
+                <div class="col-2 col-s-2" id="completed-ingame-info">
+                    <h2 id="completed">Completed:</h2>
+                    <p id="completed-number">0</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-2 col-s-2"></div>
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>
