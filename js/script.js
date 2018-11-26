@@ -14,17 +14,24 @@ var greenColorSaturation;
 window.onload = nextLevel;
 
 function loadingImages() {
+    //For every level add 4 images
     let noOfImages = level * 4;
     let game = document.getElementById("game-row");
+
+
     for (let i = 1; i <= noOfImages; i++) {
         game.innerHTML +=
             `<div class="square" id="sq${i}" onclick="showImage(event)" ></div>`;
     }
+
+    //Random places generating
     let imagePlacesArray = [];
     for (let i = 1; i <= noOfImages / 2; i++) {
         let placesArraySize = imagePlacesArray.length;
         do {
             let place = Math.floor(Math.random() * noOfImages) + 1;
+
+            //Adding an img element if space isn't already taken
             if (!imagePlacesArray.includes(place)) {
                 imagePlacesArray.push(place);
                 let div = document.getElementById(`sq${place}`);
@@ -34,7 +41,10 @@ function loadingImages() {
             }
         } while (imagePlacesArray.length !== placesArraySize + 2)
     }
+
+    //Refreshing statistics
     updateInGameStats();
+
     changeAllClickableState(false);
 }
 function startGame() {
@@ -51,9 +61,6 @@ function startTime() {
     timeDecreasingInterval = setInterval(() => {
         if (--time === 0) {
             finishGame();
-            //When time runs up all images lose clickable state and stats show up.
-
-
         }
         setTime(time);
         updateTimeBar();
